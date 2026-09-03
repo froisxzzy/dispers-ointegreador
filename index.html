@@ -268,6 +268,7 @@
       </aside>
 
       <div>
+        <!-- ===== ABSORÇÃO ===== -->
         <article class="opt-block card rv" id="absorcao">
           <h3>Teste de materiais: quem absorve mais luz?<span class="tag">INTERATIVO</span></h3>
           <p>Quando a luz branca do sol atinge uma superfície, parte é <strong>refletida</strong>, parte é <strong>absorvida</strong> (convertida em energia térmica) e parte pode ser <strong>transmitida</strong>. A cor que enxergamos é justamente a faixa do espectro que o material <em>devolve</em> aos nossos olhos. Escolha um material e veja o resultado:</p>
@@ -279,6 +280,7 @@
           <p class="verdict" id="matVerdict" aria-live="polite"></p>
         </article>
 
+        <!-- ===== DISCO DE NEWTON ===== -->
         <article class="opt-block card rv" id="newton">
           <h3>Disco de Newton: a prova de que a luz branca é colorida<span class="tag">INTERATIVO</span></h3>
           <div class="newton-lab">
@@ -300,6 +302,7 @@
           </div>
         </article>
 
+        <!-- ===== CÂMARA ESCURA ===== -->
         <article class="opt-block card rv" id="camara">
           <h3>Câmara Escura: a geometria dos raios<span class="tag">INTERATIVO</span></h3>
           <p>A luz se propaga em <strong>linha reta</strong>. Numa caixa fechada com um pequeno furo, cada ponto do objeto projeta um ponto correspondente do lado de dentro — e a imagem sai <strong>invertida</strong>. É o princípio da fotografia… e da medição segura do sol. Aproxime ou afaste a vela e observe:</p>
@@ -326,90 +329,7 @@
               <label for="camDist" class="mono" style="font-size:.75rem">DISTÂNCIA DO OBJETO</label>
               <input type="range" id="camDist" min="0.8" max="3" step="0.1" value="1.6">
             </div>
-            <p class="formula" id="camReadout">i = o · (dᵢ / dₒ)</p>
-            <p style="margin-top:1rem;font-size:.92rem;color:var(--ink2)"><strong>A ponte com o projeto:</strong> entender que os raios viajam em linha reta é o que nos permite calcular o <strong>ângulo de inclinação dos coletores</strong> (≈ latitude local) para que os raios incidam o mais próximo possível da perpendicular — e o espaçamento entre fileiras de placas, para que uma não faça sombra na outra. A mesma geometria da câmara escura dimensiona nossa usina solar.</p>
-          </div>
-        </article>
-
-        <article class="opt-block card rv" id="dispersao">
-          <h3>Dispersão: o prisma dentro do coletor<span class="tag new">DIFRAÇÃO APLICADA</span></h3>
-          <p>Antes de aplicar a difração, precisamos entender como a luz <strong>se separa</strong> em cores. Ao atravessar o vidro do coletor (ou um prisma), cada cor sofre um desvio diferente — é a <strong>dispersão luminosa</strong>. Isso importa porque o vermelho é a faixa de maior comprimento de onda e carrega <em>muita energia térmica</em>. O coletor precisa capturar tudo.</p>
-          <div class="lab prism-lab" style="margin-top:1rem">
-            <span class="hint">⠿ ARRASTE O PRISMA</span>
-            <svg class="scene" id="prismSvg" viewBox="0 0 900 400" role="img" aria-label="Feixe de luz branca atravessando um prisma triangular; com a dispersão ativada, a luz sai separada em arco-íris">
-              <g aria-hidden="true">
-                <rect x="26" y="180" width="86" height="46" rx="9" fill="#1a2a4a" stroke="#3b537f"/>
-                <rect x="104" y="188" width="16" height="30" rx="4" fill="#2c4066" stroke="#3b537f"/>
-              </g>
-              <line id="beamIn" class="rayline" x1="120" y1="203" x2="430" y2="203" stroke="#ffffff" stroke-width="5"/>
-              <g id="raysG" style="display:none"></g>
-              <line id="beamOut" class="rayline" x1="470" y1="203" x2="880" y2="215" stroke="#ffffff" stroke-width="5"/>
-              <g id="prismG" class="draggable" tabindex="0" role="button" aria-label="Prisma. Use as setas do teclado ou arraste para mover.">
-                <polygon id="prismPoly" points="430,150 480,240 380,240" fill="rgba(120,190,255,.22)" stroke="#9fd4ff" stroke-width="3" style="filter:drop-shadow(0 0 12px rgba(120,190,255,.6))"/>
-              </g>
-            </svg>
-            <div class="row" style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.8rem">
-              <button class="btn-mini" id="btnDispers" aria-pressed="false">[ ATIVAR DISPERSÃO ]</button>
-            </div>
-            <div class="fb" id="p2fb" aria-live="polite">Com a dispersão desligada, a luz branca apenas atravessa o prisma. Ative para ver o espectro! 👆</div>
-            <p style="margin-top:1rem;font-size:.92rem;color:var(--ink2)"><strong>A ponte com o projeto:</strong> no vidro do coletor, a dispersão é um "inimigo controlado" — ela separa os comprimentos de onda, mas a placa preta os absorve <em>todos</em>. Se usássemos um vidro especial com índice variável (um "prisma invertido"), poderíamos redirecionar cada cor exatamente para a região da placa que mais a absorve.</p>
-          </div>
-        </article>
-
-        <article class="opt-block card rv" id="difracao">
-          <h3>Difração: fazer a luz passar por uma fenda<span class="tag new">DIFRAÇÃO APLICADA</span></h3>
-          <p>A <strong>difração</strong> é o espalhamento da luz quando passa por uma abertura pequena — comparável ao seu próprio comprimento de onda. É o fenômeno que transforma uma "linha" de luz numa "onda" que se alarga. No nosso coletor, criamos uma <strong>grade de milhares de ranhuras microscópicas</strong> (como as trilhas de um CD) sobre a placa absorvedora — cada ranhura age como uma fenda, e o conjunto concentra a luz em zonas específicas da placa.</p>
-          <div class="lab" style="margin-top:1rem">
-            <span class="hint">FENDA ↕</span>
-            <canvas id="slitCanvas" height="300" aria-label="Simulação de ondas atravessando uma fenda: quanto menor a abertura, mais a luz se espalha" role="img"></canvas>
-            <label class="mono" for="slitSlider" style="font-size:.72rem;letter-spacing:.2em;display:block;margin-top:1rem">PEQUENA ─────────── GRANDE</label>
-            <input type="range" class="plain" id="slitSlider" min="8" max="150" value="60" style="margin-top:.6rem">
-            <p class="mono" id="slitRead" aria-live="polite" style="font-size:.85rem;margin-top:.6rem">Fenda média — espalhamento médio.</p>
-            <div class="qbox">
-              <p>❓ O que acontece quando diminuímos a abertura?</p>
-              <div class="row" id="slitQuiz">
-                <button data-ok="0">A luz para ❌</button>
-                <button data-ok="1">A luz se espalha mais</button>
-                <button data-ok="0">A luz fica mais rápida ❌</button>
-              </div>
-              <div class="fb" id="slitFb" aria-live="polite" style="display:none"></div>
-            </div>
-            <p style="margin-top:1rem;font-size:.92rem;color:var(--ink2)"><strong>A ponte com o projeto:</strong> se uma única fenda espalha, <em>milhares de fendas lado a lado</em> — uma grade de difração — fazem a luz se concentrar em direções específicas, como um "espelho inteligente". É exatamente o que faz a película aplicada sobre nossos coletores.</p>
-          </div>
-        </article>
-
-        <article class="opt-block card rv" id="cd">
-          <h3>CD como coletor: difração no mundo real<span class="tag new">DIFRAÇÃO APLICADA</span></h3>
-          <p>A superfície de um CD é uma <strong>grade de difração natural</strong>: trilhas espirais separadas por apenas 1,6 µm (menor que o comprimento da luz visível!). Por isso, quando a luz branca bate no CD, ela se espalha em cores. Na piscina, usamos o mesmo princípio <em>ao contrário</em>: aplicamos uma película com ranhuras iguais sobre o coletor, que <strong>redireciona</strong> a luz solar para dentro da placa absorvedora, em vez de espalhá-la para fora. Ganho térmico estimado: <strong>+15% a +25%</strong> sobre um coletor preto comum.</p>
-          <div class="lab" style="margin-top:1rem">
-            <span class="hint">⠿ ARRASTE O ☀️</span>
-            <div id="cdArea">
-              <div id="cdRays" aria-hidden="true"></div>
-              <div id="cdDisc" role="button" tabindex="0" aria-label="CD virtual. Clique ou pressione Enter para descobrir de onde vêm as cores."></div>
-              <div id="cdLight" role="button" tabindex="0" aria-label="Fonte de luz. Arraste ou use as setas para mover.">☀️</div>
-            </div>
-            <p class="mono" id="cdRead" aria-live="polite" style="font-size:.85rem;margin-top:.9rem">Ângulo da luz: 0° — mova a fonte e veja o arco-íris girar.</p>
-            <button class="btn-mini" id="btnCdWhy" style="margin-top:.8rem">🌈 MAS DE ONDE VÊM ESSAS CORES?</button>
-            <div class="fb" id="cdFb" aria-live="polite" style="display:none"></div>
-            <p style="margin-top:1rem;font-size:.92rem;color:var(--ink2)"><strong>A ponte com o projeto:</strong> o que aqui você vê espalhado (arco-íris), no coletor é <em>redirecionado</em> para dentro. É a mesma física, aplicada em sentidos opostos.</p>
-          </div>
-        </article>
-
-        <article class="opt-block card rv" id="quiz-opt">
-          <h3>Quiz: dispersão ou difração?<span class="tag">JOGO</span></h3>
-          <p>Agora que você viu os dois fenômenos aplicados ao coletor, teste seu entendimento. Cada acerto de primeira vale +10 pontos!</p>
-          <div id="quizBox" style="margin-top:1.2rem"></div>
-        </article>
-
-        <article class="opt-block card rv" id="refracao">
-          <h3>Refração &amp; efeito estufa: a tampa de vidro<span class="tag">CONCEITO</span></h3>
-          <p>Ao passar do ar para o vidro, a luz <strong>refrata</strong> — muda de velocidade e de direção (Lei de Snell). Um vidro de baixo teor de ferro deixa atravessar cerca de <strong>90% da radiação solar</strong> (alta transmitância). Essa luz chega à placa preta, que aquece e reemite energia como <strong>infravermelho de onda longa</strong>. O detalhe óptico decisivo: o vidro é praticamente <em>opaco</em> a esse infravermelho. A energia entra fácil, mas não consegue sair — o <strong>efeito estufa</strong> que eleva a temperatura do coletor em 15–25 °C além da placa descoberta.</p>
-          <p style="margin-top:.8rem">Combinamos então os três fenômenos + a difração: <strong>máxima absorção</strong> (placa preta seletiva), <strong>mínima reflexão</strong> (inclinação correta dos raios), <strong>refração controlada</strong> (tampa de vidro que aprisiona o calor) e <strong>difração aplicada</strong> (grade que redireciona a luz para dentro da placa).</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+            <p class="formula" id="camReadout">i = o · (dᵢ / d
 
 <!-- ================= 04 ROBÓTICA ================= -->
 <section id="robotica">
