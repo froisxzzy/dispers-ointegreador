@@ -125,31 +125,46 @@
     <div class="sec-head rv">
       <p class="sec-num">02 / A SOLUÇÃO</p>
       <h2 class="lm"><span>Um circuito que colhe sol e decide sozinho</span></h2>
-      <p class="lead">A água da piscina circula por coletores escuros instalados sob o sol, equipados com uma <strong>película de grade de difração</strong> que concentra a luz na placa absorvedora. Um controlador compara temperaturas e só liga a bomba quando há calor útil a colher. <strong>Toque nos componentes do diagrama</strong> para entender cada parte.</p>
+      <p class="lead">A água da piscina circula por coletores escuros instalados sob o sol, equipados com uma <strong>película de grade de difração</strong> que concentra a luz na placa absorvedora. Um controlador compara temperaturas e só liga a bomba quando há calor útil a colher. <strong>Clique nos componentes do diagrama</strong> para entender cada parte.</p>
     </div>
     <div class="sol-grid">
       <div class="diagram-box rv">
-        <svg viewBox="0 0 900 430" role="group" aria-label="Diagrama interativo do sistema HÉLIOS: piscina, bomba, filtro, válvula, coletores solares com grade difratora e controlador">
+        <svg viewBox="0 0 900 430" role="group" aria-label="Diagrama interativo do sistema HÉLIOS">
+          <!-- Sol -->
           <g aria-hidden="true">
             <circle cx="90" cy="66" r="26" fill="var(--amber)"/>
             <g stroke="var(--amber)" stroke-width="4" stroke-linecap="round">
-              <line x1="90" y1="20" x2="90" y2="32"/><line x1="90" y1="100" x2="90" y2="112"/>
-              <line x1="44" y1="66" x2="56" y2="66"/><line x1="124" y1="66" x2="136" y2="66"/>
-              <line x1="58" y1="34" x2="66" y2="42"/><line x1="114" y1="90" x2="122" y2="98"/>
-              <line x1="122" y1="34" x2="114" y2="42"/><line x1="66" y1="90" x2="58" y2="98"/>
+              <line x1="90" y1="20" x2="90" y2="32"/>
+              <line x1="90" y1="100" x2="90" y2="112"/>
+              <line x1="44" y1="66" x2="56" y2="66"/>
+              <line x1="124" y1="66" x2="136" y2="66"/>
+              <line x1="58" y1="34" x2="66" y2="42"/>
+              <line x1="114" y1="90" x2="122" y2="98"/>
+              <line x1="122" y1="34" x2="114" y2="42"/>
+              <line x1="66" y1="90" x2="58" y2="98"/>
             </g>
           </g>
+          
+          <!-- Tubulação -->
           <path class="pipe" d="M300 320 H356 M404 320 H452 M522 320 H548 M572 320 H600 V150 M700 128 V200 H300" aria-hidden="true"/>
+          
+          <!-- Coletor com grade -->
           <g class="dnode" data-id="coletor" tabindex="0" role="button" aria-label="Coletores solares com grade de difração — clique para detalhes">
             <g transform="rotate(-16 620 120)">
               <rect class="dshape" x="500" y="96" width="240" height="52" rx="6" fill="var(--teal-dk)" stroke="var(--line)" stroke-width="2.5"/>
               <g stroke="var(--c6)" stroke-width="1" opacity=".7">
-                <line x1="510" y1="96" x2="510" y2="148"/><line x1="530" y1="96" x2="530" y2="148"/>
-                <line x1="550" y1="96" x2="550" y2="148"/><line x1="570" y1="96" x2="570" y2="148"/>
-                <line x1="590" y1="96" x2="590" y2="148"/><line x1="610" y1="96" x2="610" y2="148"/>
-                <line x1="630" y1="96" x2="630" y2="148"/><line x1="650" y1="96" x2="650" y2="148"/>
-                <line x1="670" y1="96" x2="670" y2="148"/><line x1="690" y1="96" x2="690" y2="148"/>
-                <line x1="710" y1="96" x2="710" y2="148"/><line x1="730" y1="96" x2="730" y2="148"/>
+                <line x1="510" y1="96" x2="510" y2="148"/>
+                <line x1="530" y1="96" x2="530" y2="148"/>
+                <line x1="550" y1="96" x2="550" y2="148"/>
+                <line x1="570" y1="96" x2="570" y2="148"/>
+                <line x1="590" y1="96" x2="590" y2="148"/>
+                <line x1="610" y1="96" x2="610" y2="148"/>
+                <line x1="630" y1="96" x2="630" y2="148"/>
+                <line x1="650" y1="96" x2="650" y2="148"/>
+                <line x1="670" y1="96" x2="670" y2="148"/>
+                <line x1="690" y1="96" x2="690" y2="148"/>
+                <line x1="710" y1="96" x2="710" y2="148"/>
+                <line x1="730" y1="96" x2="730" y2="148"/>
               </g>
               <line x1="560" y1="96" x2="560" y2="148" stroke="var(--aqua)" stroke-width="2"/>
               <line x1="620" y1="96" x2="620" y2="148" stroke="var(--aqua)" stroke-width="2"/>
@@ -160,17 +175,23 @@
             <text x="600" y="52" font-family="Space Mono" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="bold">COLETOR COM</text>
             <text x="600" y="70" font-family="Space Mono" font-size="14" fill="var(--c6)" text-anchor="middle" font-weight="bold">GRADE DE DIFRAÇÃO</text>
           </g>
+          
+          <!-- Piscina -->
           <g class="dnode" data-id="piscina" tabindex="0" role="button" aria-label="Piscina térmica — clique para detalhes">
             <rect class="dshape" x="40" y="252" width="262" height="120" rx="16" fill="var(--aqua)" stroke="var(--line)" stroke-width="3"/>
             <path d="M56 282 q14 -10 28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0" fill="none" stroke="var(--paper)" stroke-width="3.5" opacity=".85"/>
             <path d="M56 310 q14 -10 28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0" fill="none" stroke="var(--paper)" stroke-width="3.5" opacity=".55"/>
             <text x="171" y="352" font-family="Space Mono" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="bold">PISCINA TÉRMICA</text>
           </g>
+          
+          <!-- Bomba -->
           <g class="dnode" data-id="bomba" tabindex="0" role="button" aria-label="Bomba de circulação — clique para detalhes">
             <circle class="dshape" cx="380" cy="320" r="26" fill="var(--paper)" stroke="var(--line)" stroke-width="3"/>
             <path d="M380 302 v36 M362 320 h36 M368 308 l24 24 M392 308 l-24 24" stroke="var(--orange)" stroke-width="3"/>
             <text x="380" y="372" font-family="Space Mono" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="bold">BOMBA</text>
           </g>
+          
+          <!-- Filtro -->
           <g class="dnode" data-id="filtro" tabindex="0" role="button" aria-label="Filtro — clique para detalhes">
             <rect class="dshape" x="452" y="294" width="70" height="52" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="3"/>
             <line x1="462" y1="310" x2="512" y2="310" stroke="var(--teal)" stroke-width="3"/>
@@ -178,16 +199,22 @@
             <line x1="462" y1="334" x2="512" y2="334" stroke="var(--teal)" stroke-width="3"/>
             <text x="487" y="372" font-family="Space Mono" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="bold">FILTRO</text>
           </g>
+          
+          <!-- Válvula -->
           <g class="dnode" data-id="valvula" tabindex="0" role="button" aria-label="Válvula de três vias — clique para detalhes">
             <circle class="dshape" cx="560" cy="320" r="14" fill="var(--amber)" stroke="var(--line)" stroke-width="3"/>
             <text x="560" y="372" font-family="Space Mono" font-size="13" fill="var(--ink)" text-anchor="middle">VÁLVULA 3 VIAS</text>
           </g>
+          
+          <!-- Sensores -->
           <g class="dnode" data-id="sensores" tabindex="0" role="button" aria-label="Sensores de temperatura T1 e T2 — clique para detalhes">
             <circle class="dshape" cx="320" cy="320" r="9" fill="var(--orange)" stroke="var(--line)" stroke-width="2.5"/>
             <circle class="dshape" cx="700" cy="176" r="9" fill="var(--orange)" stroke="var(--line)" stroke-width="2.5"/>
             <text x="338" y="300" font-family="Space Mono" font-size="13" fill="var(--orange)" font-weight="bold">T1</text>
             <text x="716" y="172" font-family="Space Mono" font-size="13" fill="var(--orange)" font-weight="bold">T2</text>
           </g>
+          
+          <!-- Controlador -->
           <g class="dnode" data-id="controlador" tabindex="0" role="button" aria-label="Controlador — clique para detalhes">
             <rect class="dshape" x="700" y="272" width="168" height="96" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="3"/>
             <text x="784" y="302" font-family="Space Mono" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="bold">CONTROLADOR</text>
@@ -198,6 +225,7 @@
           </g>
         </svg>
       </div>
+      
       <aside class="rv">
         <div class="card dinfo" aria-live="polite">
           <h3 id="dTitle">Toque em um componente</h3>
